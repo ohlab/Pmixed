@@ -1,8 +1,8 @@
-isadmixed <- function(speciestree, n, tipagrD){
-  agrDtypes <- tipagrD[clade.members(n, speciestree)]
-  agrDtypes <- agrDtypes[which(agrDtypes!="NA" & agrDtypes!="")]
+isadmixed <- function(speciestree, n, tip_AIP_type){
+  clade_AIP_types <- tip_AIP_type[clade.members(n, speciestree)]
+  clade_AIP_types <- clade_AIP_types[which(clade_AIP_types!="NA" & clade_AIP_types!="")]
   
-  return(length(unique(agrDtypes))>1)
+  return(length(unique(clade_AIP_types))>1)
 }
 
 computePmixed_topological <- function(speciestree, tipagrD){
